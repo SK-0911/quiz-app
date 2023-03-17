@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ================ Start Quiz ================ -->
+    <div id="startQuiz" class="bg-light p-5 shadow-lg">
+        <h1 class="text-center">Quiz</h1>
+        <hr class="mb-5">
+        <input type="text" id ="player" placeholder="Enter Your Name" class="form-control w-50 m-auto">
+        <input type="button" value="Start Quiz" class="btn btn-dark mt-3 m-auto d-block">
+    </div>
+    <!-- ================ Quiz Box ================ -->
+    <div id="quizBox" class="bg-light p-5 shadow-lg">
+        <div class="row">
+            <div class="col">
+                <h4 id="changePlayer">Player</h4>
+            </div>
+            <div class="col">
+                <h4 id="timer" class="text-center">00:00</h4>
+            </div>
+            <div class="col">
+                <h4 id="pts" class="float-end">Points: 0</h4>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col">
+                <h2 id="q">Question</h2>
+            </div>
+        </div>
+
+        <div class="row row-cols-2 mt-4">
+            <div class="col">
+                <input type="button" value="a" id="a" class="opt btn btn-dark w-100 mt-3">
+            </div>
+            <div class="col">
+                <input type="button" value="b" id="b" class="opt btn btn-dark w-100 mt-3">
+            </div>
+            <div class="col">
+                <input type="button" value="c" id="c" class="opt btn btn-dark w-100 mt-3">
+            </div>
+            <div class="col">
+                <input type="button" value="d" id="d" class="opt btn btn-dark w-100 mt-3">
+            </div>
+        </div>
+
+        <hr class="mt-5">
+
+        <div class="row">
+            <div class="col">
+                <h4 id="qNo">Question No. 0/0</h4>
+            </div>
+            <div class="col">
+                <input type="button" value="Next" id="next" class="btn btn-outline-dark w-50 float-end">
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.js"></script>
+</body>
+</html>
