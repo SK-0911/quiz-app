@@ -1,4 +1,4 @@
-#startQuiz, #quizBox{
+#startQuiz, #quizBox, #restartQuiz{
     max-width: 800px;
     margin: 200px auto 0 auto;
 }
