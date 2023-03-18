@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="time">00:00</h1>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        // ===========Variables=======
+            var totalmins=0; // mins given by quiz master
+            var convertedtosecs=0; //mins converted to secs
+            var remainingmins=0; 
+            var remainingsecs=0;
+            var quiztime="";
+
+            // ============= start time function===============
+            function startTime(){
+                totalmins=2;
+                convertedtosecs=60*totalmins; 
+                // console.log(convertedtosecs);
+
+                function timer(){
+                    convertedtosecs--;
+                    
+
+                    remainingmins=Math.floor(convertedtosecs/60);
+                    remainingsecs=convertedtosecs%60;
+
+                    // Show secs and mins in 09 instead of 9, incase they reach a single digit value
+                    if(remainingmins<=9 && remainingmins>=0){
+                        remainingmins="0"+remainingmins;
+                    }
+                    if(remainingsecs<=9 && remainingsecs>=0){
+                        remainingsecs="0"+remainingsecs;
+                    }
+
+                    $("#time").text(`${remainingmins}:${remainingsecs}`);
+                    // To prevent timer go into negative value
+                    if(convertedtosecs===0){
+                        clearInterval(quiztime);
+                    }
+                }
+
+
+                quiztime=setInterval(timer,1000);
+            }
+
+
+            startTime();
+    </script>
+</body>
+</html>
