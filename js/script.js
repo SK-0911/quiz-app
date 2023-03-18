@@ -7,7 +7,9 @@ var questions = [
         b: "Charles Babbage",
         c: "James",
         d: "Shaun",
-        ans: "b"
+        ans: "b",
+        opt1: "a",
+        opt2: "c"
     },
 
     {
@@ -16,7 +18,9 @@ var questions = [
         b: "Raju Ji",
         c: "Ravi Ji",
         d: "Ajay Ji",
-        ans: "a"
+        ans: "a",
+        opt1: "b",
+        opt2: "d"
     },
 
     {
@@ -25,7 +29,9 @@ var questions = [
         b: "All Time Masti",
         c: "All the Monkeys",
         d: "Automated Teller Machine",
-        ans: "d"
+        ans: "d",
+        opt1: "a",
+        opt2: "b"
     }
 ];
 
@@ -111,6 +117,7 @@ $("#next").click(function (){
 $("#restartQuizBtn").click(function (){
     $("#quizBox").show();
     $("#restartQuiz").hide();
+    $("#lifeline").prop("disabled", "");
     reset();    // reset the game
     loadQuestion();     // And then load the last question
     startTime();
@@ -168,5 +175,11 @@ function startTime(){
     quiztime=setInterval(timer,1000);
 }
 
+// 50-50 Lifeline
 
+$("#lifeline").click(function (){
+    $("#" + questions[count].opt1).val("").prop("disabled", "true");
+    $("#" + questions[count].opt2).val("").prop("disabled", "true");
+    $(this).prop("disabled", "true");
+})
 
